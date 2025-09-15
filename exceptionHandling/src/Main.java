@@ -13,17 +13,19 @@ public class Main {
 
         while (true) {
             try {
-                System.out.print("\nScegli la posizione da modificare (1-5, oppure 0 per uscire): ");
+                System.out.print("\nScegli la posizione da modificare (tra 1 e 5, o 0 per uscire): ");
                 int pos = scanner.nextInt();
 
-                if (pos == 0) {
-                    System.out.println("Programma terminato.");
+                if (pos >= 1 && pos <= 5) {
+                    System.out.print("Inserisci il nuovo numero: ");
+                    int newNumber = scanner.nextInt();
+                    arr.modificaElemento(pos - 1, newNumber);
+                } else if (pos == 0) {
+                    System.out.println("Programma terminato!");
                     break;
+                } else {
+                    System.out.println("Posizione non valida!");
                 }
-
-                System.out.print("Inserisci il nuovo numero: ");
-                int nuovoNumero = scanner.nextInt();
-                arr.modificaElemento(pos - 1, nuovoNumero);
 
                 System.out.print("\nArray aggiornato: ");
                 arr.stampaArray();

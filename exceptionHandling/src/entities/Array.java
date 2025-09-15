@@ -20,8 +20,6 @@ public class Array {
     public void modificaElemento(int pos, int newNum) {
         if(pos >= 0 && pos < num.length) {
             num[pos] = newNum;
-        } else {
-            System.out.println("Posizione non valida!");
         }
     }
 }
